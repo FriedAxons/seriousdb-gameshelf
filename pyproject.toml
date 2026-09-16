@@ -1,0 +1,29 @@
+[project]
+name = "seriousdb-gameshelf"
+version = "0.1.0"
+description = "A game library API using seriousdb as its datastore"
+readme = "README.md"
+authors = [
+    { name = "FriedAxons", email = "friedaxons@proton.me" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "httpx>=0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+seriousdb-gameshelf = "gameshelf.main:app"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "gameshelf"
+module-root = "src"
